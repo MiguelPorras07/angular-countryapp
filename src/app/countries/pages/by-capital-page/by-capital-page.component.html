@@ -1,0 +1,25 @@
+<h1>Por Capital</h1>
+
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- SearchBox -->
+    <shared-search-box
+      (onDebounce)="searchByCapital($event)"
+      [initialValue]="initialValue"
+      placeholder="Buscar por Capital"></shared-search-box>
+    <!-- si quiero utilizar el shared-search-box, necesito importar ese modulo, y se importará en el COUNTRIES-MODULE, y qué modulo se va a importar??
+    el SharedModule, EN EL INITIAL VALUE, ES IMPORTANTE COLOCARLO COMO INPUT EN EL COMPONENTE.TS, especificarlo en el componente html como [value]
+    y jalarlo en la inicializacion del ngoninit -->
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <hr>
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+
+    <countries-table [countries]="countries"></countries-table>
+  </div>
+</div>

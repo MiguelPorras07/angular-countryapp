@@ -1,0 +1,13 @@
+<!-- (keyup.enter)="emitValue( txtInput.value )" -->
+<input
+   type="text"
+   [placeholder]="placeholder"
+   class="form-control"
+   [value]="initialValue"
+   (keyup)="onKeyPress( txtInput.value )"
+   #txtInput
+>
+
+<!-- paso número dos: Cuando la persona hace un keyup.enter, voy a mandar a llamar un método, yo no le he dicho cómo se va a llamar ese metodo,
+  para lo cual lo nombraremos como emitValue, este es el nombre del metodo del modulo que mando a llamar, y entre parentesis necesito la
+  referencia local, que va a ser txtInput.value, como el emitValue no existe, lo crearemos en el search-box.ts...  -->

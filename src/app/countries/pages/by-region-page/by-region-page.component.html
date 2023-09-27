@@ -1,0 +1,26 @@
+<h1>Por Región</h1>
+
+<hr>
+
+<div class="row">
+  <div class="col text-center">
+    <!-- SearchBox -->
+    <button *ngFor="let region of regions"
+      class="btn mx-2"
+      [ngClass]="{ 'btn-outline-primary': selectedRegion === region }"
+      (click)="searchByRegion(region)">
+      {{ region }}
+    </button>
+    <!-- si quiero utilizar el shared-search-box, necesito importar ese modulo, y se importará en el COUNTRIES-MODULE, y qué modulo se va a importar??
+    el SharedModule -->
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <hr>
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+
+    <countries-table [countries]="countries"></countries-table>
+  </div>
+</div>
