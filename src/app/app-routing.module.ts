@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './shared/pages/home-page/home-page.component';
 import { AboutPageComponent } from './shared/pages/about-page/about-page.component';
 import { ContactComponent } from './shared/components/contact/contact.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 /* definicion de las rutas, viene de angular router */
 const routes: Routes = [
@@ -41,6 +42,10 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule,
-  ]
+  ],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }]
 })
 export class AppRoutingModule { }
